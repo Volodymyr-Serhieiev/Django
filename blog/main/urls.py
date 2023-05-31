@@ -7,9 +7,9 @@ urlpatterns = [
     path('', home_page),
     path('about/', about),
     path('create/', create),
-    path('<slug>/', post),
-    path('<slug>/comment/', comment),
-    path('<slug>/update/', update_post),
-    path('<slug>/delete/', delete),
+    path('<slug:slug>/', post),
+    path('<slug:slug>/comment/', comment),
+    path('<slug:slug>/update/', update_post),
+    path('<slug:slug>/delete/', delete),
 
 ]
