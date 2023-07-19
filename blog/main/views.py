@@ -3,15 +3,17 @@ from django.shortcuts import render
 
 
 def home_page(request):
-    return HttpResponse('This should be the home page')
+    return render(request, 'main/main_page.html')
 
 
 def about(request):
     return HttpResponse('This should be the about page')
 
 
-def post(request, slug):
-    return HttpResponse(f'This should be post id:{slug}')
+def post(request, post_id):
+    return render(request, 'main/post.html', {
+        'post_id': post_id,
+    })
 
 
 def comment(request, slug):
@@ -19,7 +21,7 @@ def comment(request, slug):
 
 
 def create(request):
-    return HttpResponse(f'Create a new post')
+    return render(request, 'main/create.html')
 
 
 def update_post(request, slug):

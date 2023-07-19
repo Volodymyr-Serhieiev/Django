@@ -10,12 +10,12 @@ def change_password(request):
     return HttpResponse('Password change page')
 
 
-def register(request):
-    return HttpResponse('User registration')
+def registration(request):
+    return render(request, 'registration/registration.html')
 
 
 def login(request):
-    return HttpResponse('Login')
+    return render(request, 'registration/login.html')
 
 
 def logout(request):

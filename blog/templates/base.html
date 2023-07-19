@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header><div>
+    <a href="{% url 'home_page' %}">home_page</a>
+    <a href="{% url 'registration' %}">Registration</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'post' '1' %}"> Post </a>
+    <a href="{% url 'create' %}"> Create post </a>
+</div></header>
+<div>
+  {% block content %}
+  <h1> base content</h1>
+  {% endblock %}
+</div>
+
+<!--<footer>Some text footer</footer>-->
+</body>
+
+</html>
