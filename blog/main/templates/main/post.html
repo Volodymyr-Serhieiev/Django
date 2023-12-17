@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="padding: 20px; background-color: chocolate">Post with id: {{ post_id }}</div>
+<div style="padding: 20px; background-color: chocolate">{{ headline }}</div>
+<div style="padding: 20px; background-color: chocolate">{{ created_at }}</div>
+<div style="padding: 20px; background-color: chocolate">{{ author }}</div>
+<div style="padding: 20px; background-color: chocolate">{{ topics }}</div>
+<div style="padding: 20px; background-color: chocolate">
+    <p>Comments:</p>
+    {% for comment in comments %}
+    <p>{{ comment }}</p>
+    {% endfor %}
+</div>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send form</button>
+</form>
 {% endblock %}

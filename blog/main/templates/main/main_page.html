@@ -1,5 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="padding: 20px; background-color: chocolate"> Main page </div>
-{% endblock %}
+<div>
+    <form method="get" action="{% url 'home_page' %}">
+        {{ form }}
+        <button type="submit">Send form</button>
+    </form>
+</div>
+{% for post in posts %}
+<div style="padding: 20px; background-color: chocolate">
+    <a href="{% url 'post' post.slug%}">{{ post.headline }}</a>
+</div>
+
+{% endfor %}
+
+{% for topic in topics %}
+<div style="padding: 20px; background-color: chocolate">
+    <a href="{% url 'posts-by-topic' topic.slug%}">{{ topic.headline }}</a>
+</div>
+
+{% endfor %}
+{% endblock %} 

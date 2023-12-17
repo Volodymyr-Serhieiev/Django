@@ -22,4 +22,4 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['name', 'author', 'blog_post', 'created_at']
+    list_display = ['comment', 'author', 'blog_post', 'created_at']
